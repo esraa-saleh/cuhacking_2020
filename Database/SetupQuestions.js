@@ -139,7 +139,7 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Pants",
-          Value: "pants",
+          Value: "longpants",
           AnswerType: "Bottoms",
           NextQuestionId: 8,
         },

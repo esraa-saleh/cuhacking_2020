@@ -10,7 +10,8 @@ module.exports.ImageTypes = [
   "Build",
   "Shirt",
   "Jacket",
-  "Bottoms"
+  "Bottoms",
+  "Shoes"
 ]
 
 module.exports.Paths = {

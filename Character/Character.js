@@ -12,6 +12,7 @@ class Character {
       Jacket: {
         Color: Constants.Colors.Default
       },
+      Shoes: { },
       Build: { },
       Gender: null,
     }
@@ -52,6 +53,8 @@ class Character {
       attribute.Image = buildImagePath("body_type_" + value);
     }
 
+    let addShoes = (attribute)=>{ attribute.Image = buildImagePath("shoes"); }
+
     console.log(updateData.AnswerType);
     switch (updateData.AnswerType){
       case "Gender":
@@ -62,6 +65,7 @@ class Character {
         break;
       case "Bottoms":
         update(this._attributes.Bottoms);
+        addShoes(this._attributes.Shoes);
         break;
       case "Shirt":
         update(this._attributes.Shirt);
