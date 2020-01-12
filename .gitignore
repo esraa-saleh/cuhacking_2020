@@ -1,3 +1,4 @@
 node_modules/
 build/
 react-app/build/
+.DS_Store
