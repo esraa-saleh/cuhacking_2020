@@ -18,6 +18,23 @@ class Character {
     }
   }
 
+  Reset(){
+    this._attributes = {
+      Bottoms: {
+        Color: Constants.Colors.Default
+      },
+      Shirt: {
+        Color: Constants.Colors.Default
+      },
+      Jacket: {
+        Color: Constants.Colors.Default
+      },
+      Shoes: { },
+      Build: { },
+      Gender: null,
+    }
+  }
+  
   get Images(){
     let images = [ ];
     for (let type of Constants.ImageTypes){

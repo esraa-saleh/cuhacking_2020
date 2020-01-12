@@ -59,7 +59,7 @@ function setupQuestions(){
         },
         {
           Text: "Long sleeved",
-          Value: "shirt",
+          Value: "longtshirt",
           AnswerType: "Shirt",
           NextQuestionId: 4,
         }
@@ -134,7 +134,7 @@ function setupQuestions(){
     },
     {
       QuestionId: 7,
-      Question: "Was the suspect wearing pants, shorts, or a skirt?",
+      Question: "Was the suspect wearing pants or shorts?",
       TypeTag: "Bottoms",
       Options: JSON.stringify([
         {
@@ -148,12 +148,6 @@ function setupQuestions(){
           Value: "shorts",
           AnswerType: "Bottoms",
           NextQuestionId: 8,
-        },
-        {
-          Text: "Skirt",
-          Value: "skirt",
-          AnswerType: "Bottoms",
-          NextQuestionId: 8,
         }
       ])
     },
@@ -165,12 +159,6 @@ function setupQuestions(){
         {
           Text: "Black",
           Color: "black",
-          AnswerType: "Bottoms",
-          NextQuestionId: -1,
-        },
-        {
-          Text: "Red",
-          Color: "red",
           AnswerType: "Bottoms",
           NextQuestionId: -1,
         },

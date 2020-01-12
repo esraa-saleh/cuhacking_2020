@@ -4,6 +4,9 @@ import './App.css'
 
 const React = require('react');
 
+async function reset(){
+  await Request.Get('/reset');
+}
 async function drawCharacter(){
   let result = await Request.Get('/character/images');
   return result.data;
@@ -28,7 +31,7 @@ function Character(props) {
   for (let index = 0; index < props.images.length; index++)
     images.push(<img className="img-class" style={{zIndex: index, position: 'absolute'}} src={props.images[index]} alt="" key={index} />);
 
-  return <div style={{position: 'relative', top: '310px', left: '-350px'}}>
+  return <div style={{position: 'relative', top: '350px', left: '-350px'}}>
     {images}
   </div>;
 }
@@ -108,4 +111,5 @@ class Window extends React.Component {
   }
 }
 
+reset();
 export default Window;
