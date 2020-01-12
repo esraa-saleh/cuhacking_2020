@@ -1,10 +1,13 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 const data = {
   content: {
-    body: {[
+    body: [{
       QuestionId: 8,
       Question: "What color was the suspect's bottoms?",
       TypeTag: "Bottoms",
-      Options: JSON.stringify([
+      Options: [
         {
           Text: "Black",
           Color: "Black",
@@ -23,8 +26,8 @@ const data = {
           AnswerType: "Bottoms",
           NextQuestionId: -1,
         }
-      ])
-    ]}
+      ]
+    }]
   }
 }
 
@@ -36,17 +39,33 @@ function Question(props) {
   return (
     <div>
       <div>{props.question}</div>
-      <div>{props.options}</div>
     </div>
     );
 }
+
+function Option(props) {
+  return (
+    <button>
+      <div>{props.option.Text}</div>
+    </button>
+  );
+}
+
+let q = 0;
 
 class Window extends React.Component {
   constructor(props) {
     super(props);
     this.body="https://ichef.bbci.co.uk/news/410/cpsprodpb/2D73/production/_105153611_suspect1.jpg";
-    this.question="Is the suspect a male or female?";
-    this.options=["Male", "Female"];
+    this.question = data.content.body[q].Question;
+    this.options = data.content.body[q].Options;
+    q++;
+  }
+  
+  createOptions() {
+    return this.options.map(function(option) {
+            return <Option option={option} />
+    });
   }
   
   render() {
@@ -56,17 +75,22 @@ class Window extends React.Component {
           <Character 
             body={this.body} 
           />
-          <h1>Hello</h1>
         </div>
-        <div className="textbox">
+        <div className="question">
           <Question 
             question={this.question}
-            options={this.options}
           />
+        </div>
+        <div className="options">
+          {this.createOptions()}
         </div>
       </div>
     )
   }
 }
 
-ReactDOM.render(<Window />, document.getElementById('root'));
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Window />, rootElement);
+
+
