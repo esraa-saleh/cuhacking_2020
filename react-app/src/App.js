@@ -33,11 +33,12 @@ const data = {
   }
 }
 
-function refresh(){
-  
+async function refresh(){
+  let imageUrls = Request.Get('/character/images');
+  console.log(imageUrls);
 }
-function optionSelected(option){
-  Request.Post('/character/update', option).then(refresh);
+async function optionSelected(option){
+  await Request.Post('/character/update', option);
 }
 
 function Character(props) {
