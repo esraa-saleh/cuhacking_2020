@@ -74,19 +74,19 @@ function setupQuestions(){
           Text: "Black",
           Color: "black",
           AnswerType: "Shirt",
-          NextQuestionId: 5,
+          NextQuestionId: 7,
         },
         {
           Text: "Red",
           Color: "red",
           AnswerType: "Shirt",
-          NextQuestionId: 5,
+          NextQuestionId: 7,
         },
         {
           Text: "Blue",
           Color: "blue",
           AnswerType: "Shirt",
-          NextQuestionId: 5,
+          NextQuestionId: 7,
         }
       ])
     },

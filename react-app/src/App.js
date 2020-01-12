@@ -1,5 +1,6 @@
 
 import Request from './Request.js';
+import './App.css'
 
 const React = require('react');
 
@@ -25,9 +26,9 @@ function EndImage(){
 function Character(props) {
   let images = [ ];
   for (let index = 0; index < props.images.length; index++)
-    images.push(<img className="img-class" style={{zIndex: index, position: 'absolute'}} src={props.images[index]} alt="test" key={index} />);
+    images.push(<img className="img-class" style={{zIndex: index, position: 'absolute'}} src={props.images[index]} alt="" key={index} />);
 
-  return <div style={{position: 'relative', top: '50px'}}>
+  return <div style={{position: 'relative', top: '310px', left: '-350px'}}>
     {images}
   </div>;
 }
@@ -38,12 +39,15 @@ function Question(props) {
 
   for (let index = 0; index < options.length; index++){
     let option = options[index];
-    items.push(<input type='button' key={index} value={option.Text} onClick={()=>optionSelected(option, props.window)}/>)
+    items.push(<input className='question-option' type='button' key={index} value={option.Text} onClick={()=>optionSelected(option, props.window)}
+                      style={{zIndex: 99}} />)
   }
 
   return (
-    <div>
-      <div>{props.question}</div>
+    <div style={{textAlign: 'center'}}>
+      <img src="/images/logo/logo-cropped.png" alt="" />
+      <div style={{fontSize: "30px", marginTop: "10px"}}>Describe the suspect.</div>
+      <h1>{props.question}</h1>
       <div>{items}</div>
 
     </div>

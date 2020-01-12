@@ -37,6 +37,8 @@
   }
 }
 
-.img-class{
-  position: absolute;
+.question-option{
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
 }
