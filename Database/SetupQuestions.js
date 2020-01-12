@@ -53,7 +53,7 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Short sleeved",
-          Value: "T-Shirt",
+          Value: "TShirt",
           AnswerType: "Shirt",
           NextQuestionId: 4,
         },
