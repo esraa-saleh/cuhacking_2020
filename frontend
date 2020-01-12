@@ -1,6 +1,9 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 const data = {
   content: {
-    body: {[
+    body: {
       QuestionId: 8,
       Question: "What color was the suspect's bottoms?",
       TypeTag: "Bottoms",
@@ -24,7 +27,7 @@ const data = {
           NextQuestionId: -1,
         }
       ])
-    ]}
+    }
   }
 }
 
@@ -69,4 +72,5 @@ class Window extends React.Component {
   }
 }
 
-ReactDOM.render(<Window />, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Window />, rootElement);
