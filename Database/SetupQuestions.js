@@ -9,13 +9,13 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Male",
-          Value: "Male",
+          Value: "male",
           AnswerType: "Gender",
           NextQuestionId: 2,
         },
         {
           Text: "Female",
-          Value: "Female",
+          Value: "female",
           AnswerType: "Gender",
           NextQuestionId: 2,
         }
@@ -28,19 +28,19 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Small",
-          Value: "Small",
+          Value: "small",
           AnswerType: "Build",
           NextQuestionId: 3,
         },
         {
           Text: "Medium",
-          Value: "Medium",
+          Value: "medium",
           AnswerType: "Build",
           NextQuestionId: 3,
         },
         {
           Text: "Large",
-          Value: "Large",
+          Value: "large",
           AnswerType: "Build",
           NextQuestionId: 3,
         }
@@ -53,13 +53,13 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Short sleeved",
-          Value: "T-Shirt",
+          Value: "tshirt",
           AnswerType: "Shirt",
           NextQuestionId: 4,
         },
         {
           Text: "Long sleeved",
-          Value: "Shirt",
+          Value: "shirt",
           AnswerType: "Shirt",
           NextQuestionId: 4,
         }
@@ -72,19 +72,19 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Black",
-          Color: "Black",
+          Color: "black",
           AnswerType: "Shirt",
           NextQuestionId: 5,
         },
         {
           Text: "Red",
-          Color: "Red",
+          Color: "red",
           AnswerType: "Shirt",
           NextQuestionId: 5,
         },
         {
           Text: "Blue",
-          Color: "Blue",
+          Color: "blue",
           AnswerType: "Shirt",
           NextQuestionId: 5,
         }
@@ -97,7 +97,7 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Yes",
-          Value: "Jacket",
+          Value: "jacket",
           AnswerType: "Jacket",
           NextQuestionId: 6,
         },
@@ -114,19 +114,19 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Black",
-          Color: "Black",
+          Color: "black",
           AnswerType: "Jacket",
           NextQuestionId: 7,
         },
         {
           Text: "Red",
-          Color: "Red",
+          Color: "red",
           AnswerType: "Jacket",
           NextQuestionId: 7,
         },
         {
           Text: "Blue",
-          Color: "Blue",
+          Color: "blue",
           AnswerType: "Jacket",
           NextQuestionId: 7,
         }
@@ -139,19 +139,19 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Pants",
-          Value: "Pants",
+          Value: "pants",
           AnswerType: "Bottoms",
           NextQuestionId: 8,
         },
         {
           Text: "Shorts",
-          Value: "Shorts",
+          Value: "shorts",
           AnswerType: "Bottoms",
           NextQuestionId: 8,
         },
         {
           Text: "Skirt",
-          Value: "Skirt",
+          Value: "skirt",
           AnswerType: "Bottoms",
           NextQuestionId: 8,
         }
@@ -164,19 +164,19 @@ function setupQuestions(){
       Options: JSON.stringify([
         {
           Text: "Black",
-          Color: "Black",
+          Color: "black",
           AnswerType: "Bottoms",
           NextQuestionId: -1,
         },
         {
           Text: "Red",
-          Color: "Red",
+          Color: "red",
           AnswerType: "Bottoms",
           NextQuestionId: -1,
         },
         {
           Text: "Blue",
-          Color: "Blue",
+          Color: "blue",
           AnswerType: "Bottoms",
           NextQuestionId: -1,
         }

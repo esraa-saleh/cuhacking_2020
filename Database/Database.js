@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const uri = "mongodb+srv://newuser:newuser@cluster0-xi7tx.gcp.mongodb.net/Test?retryWrites=true&w=majority";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const questionsModel = mongoose.model('Questions_Test', new mongoose.Schema({
+const questionsModel = mongoose.model('Questions_Test2', new mongoose.Schema({
   QuestionId: 'Number',
   Question: 'string',
   TypeTag: 'string',
