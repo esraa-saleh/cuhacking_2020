@@ -14,5 +14,5 @@ module.exports.ImageTypes = [
 ]
 
 module.exports.Paths = {
-  Images: "/Images"
+  Images: "/images"
 }

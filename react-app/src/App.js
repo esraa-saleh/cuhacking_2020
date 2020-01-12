@@ -4,7 +4,8 @@ import Request from './Request.js';
 const React = require('react');
 
 async function drawCharacter(){
-  return await Request.Get('/character/images');
+  let result = await Request.Get('/character/images');
+  return result.data;
 }
 async function refresh(qId){
   let response = await Request.Get('/question/' + qId);
@@ -27,7 +28,6 @@ function Character(props) {
 
 function Question(props) {
   let items = [ ];
-  console.log(props);
   let options = JSON.parse(props.options);
 
   for (let index = 0; index < options.length; index++){
@@ -59,8 +59,7 @@ class Window extends React.Component {
   async refresh(qId){
     let images = await drawCharacter();
     let data = await refresh(qId);
-    console.log(data);
-
+    
     this.setState({
       question: data.Question,
       options: data.Options,

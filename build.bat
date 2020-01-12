@@ -1,5 +1,5 @@
-rmdir -r build
+rmdir build /s /q
 cd react-app
 npm run-script build
-Xcopy /E /I build ../build
+move build ../build
 cd ..
