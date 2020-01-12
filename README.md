@@ -12,6 +12,9 @@ Once that runs, there's a few extra steps:
     1. Copy over the build folder from react-app/build to build
     2. Copy the images folder into build/
 
+Finally, to install dependencies:
+    `npm install`
+
 # Running
 To run the server, run the following command:
     `node server.js`
