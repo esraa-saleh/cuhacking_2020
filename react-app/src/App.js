@@ -19,9 +19,9 @@ async function optionSelected(option, window){
 function Character(props) {
   let images = [ ];
   for (let index = 0; index < props.images.length; index++)
-    images.push(<img src={props.images[index]} alt="test" key={index} />);
+    images.push(<img className="img-class" style={{zIndex: index, position: 'absolute'}} src={props.images[index]} alt="test" key={index} />);
 
-  return <div>
+  return <div style={{position: 'relative', top: '50px'}}>
     {images}
   </div>;
 }
@@ -59,7 +59,7 @@ class Window extends React.Component {
   async refresh(qId){
     let images = await drawCharacter();
     let data = await refresh(qId);
-    
+
     this.setState({
       question: data.Question,
       options: data.Options,
