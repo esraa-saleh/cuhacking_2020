@@ -1,9 +1,9 @@
 module.exports.Colors = {
-  Black: "Black",
-  Blue: "Blue",
-  Red: "Red",
+  Black: "black",
+  Blue: "blue",
+  Red: "red",
 
-  Default: "Black"
+  Default: "black"
 }
 
 module.exports.ImageTypes = [
@@ -14,5 +14,5 @@ module.exports.ImageTypes = [
 ]
 
 module.exports.Paths = {
-  Images: "./Images"
+  Images: "/images"
 }

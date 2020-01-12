@@ -3,45 +3,27 @@ import Request from './Request.js';
 
 const React = require('react');
 
-const data = {
-  content: {
-    body: {
-      QuestionId: 8,
-      Question: "What color was the suspect's bottoms?",
-      TypeTag: "Bottoms",
-      Options: JSON.stringify([
-        {
-          Text: "Black",
-          Color: "Black",
-          AnswerType: "Bottoms",
-          NextQuestionId: -1,
-        },
-        {
-          Text: "Red",
-          Color: "Red",
-          AnswerType: "Bottoms",
-          NextQuestionId: -1,
-        },
-        {
-          Text: "Blue",
-          Color: "Blue",
-          AnswerType: "Bottoms",
-          NextQuestionId: -1,
-        }
-      ])
-    }
-  }
+async function drawCharacter(){
+  let result = await Request.Get('/character/images');
+  return result.data;
 }
-
-function refresh(){
-  
+async function refresh(qId){
+  let response = await Request.Get('/question/' + qId);
+  return response.data;
 }
-function optionSelected(option){
-  Request.Post('/character/update', option).then(refresh);
+async function optionSelected(option, window){
+  await Request.Post('/character/update', option);
+  window.refresh(option.NextQuestionId);
 }
 
 function Character(props) {
-  return <img src={props.body} alt="test" />;
+  let images = [ ];
+  for (let index = 0; index < props.images.length; index++)
+    images.push(<img src={props.images[index]} alt="test" key={index} />);
+
+  return <div>
+    {images}
+  </div>;
 }
 
 function Question(props) {
@@ -50,7 +32,7 @@ function Question(props) {
 
   for (let index = 0; index < options.length; index++){
     let option = options[index];
-    items.push(<input type='button' key={index} value={option.Text} onClick={()=>optionSelected(option)}/>)
+    items.push(<input type='button' key={index} value={option.Text} onClick={()=>optionSelected(option, props.window)}/>)
   }
 
   return (
@@ -65,20 +47,36 @@ function Question(props) {
 class Window extends React.Component {
   constructor(props) {
     super(props);
-    this.question=data.content.body.Question;
-
-    this.options=data.content.body.Options;
+    this.state = {
+      question: "Loading",
+      options: "[]",
+      images: []
+    }
   }
-
+  componentDidMount(){
+    this.refresh(1);
+  }
+  async refresh(qId){
+    let images = await drawCharacter();
+    let data = await refresh(qId);
+    
+    this.setState({
+      question: data.Question,
+      options: data.Options,
+      images: images
+    });
+  }
   render() {
     return (
       <div>
         <div className="character">
+          <Character images={this.state.images} />
         </div>
         <div className="textbox">
           <Question
-            question={this.question}
-            options={this.options}
+            question={this.state.question}
+            options={this.state.options}
+            window={this}
           />
         </div>
       </div>

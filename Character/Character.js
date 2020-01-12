@@ -34,7 +34,7 @@ class Character {
 
     let buildImagePath = (relativePath)=>{
       return Constants.Paths.Images + "/" + this._attributes.Gender + "/" +
-                this._attributes.Build.Value + "/" + relativePath;
+                this._attributes.Build.Value + "/" + relativePath + ".png";
     }
     let update = (attribute)=>{
       if (color) attribute.Color = color;

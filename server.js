@@ -26,4 +26,5 @@ app.get('/character/images', (req, res) => {
   res.json(character.Images);
 })
 
+app.use(express.static('./build'));
 app.listen(port, ()=>console.log("Hello, etc."));
