@@ -8,9 +8,9 @@ module.exports.Colors = {
 
 module.exports.ImageTypes = [
   "Build",
+  "Bottoms",
   "Shirt",
   "Jacket",
-  "Bottoms",
   "Shoes"
 ]
 
