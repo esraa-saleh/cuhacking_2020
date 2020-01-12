@@ -1,0 +1,72 @@
+const data = {
+  content: {
+    body: {[
+      QuestionId: 8,
+      Question: "What color was the suspect's bottoms?",
+      TypeTag: "Bottoms",
+      Options: JSON.stringify([
+        {
+          Text: "Black",
+          Color: "Black",
+          AnswerType: "Bottoms",
+          NextQuestionId: -1,
+        },
+        {
+          Text: "Red",
+          Color: "Red",
+          AnswerType: "Bottoms",
+          NextQuestionId: -1,
+        },
+        {
+          Text: "Blue",
+          Color: "Blue",
+          AnswerType: "Bottoms",
+          NextQuestionId: -1,
+        }
+      ])
+    ]}
+  }
+}
+
+function Character(props) {
+  return <img src={props.body} />;
+}
+
+function Question(props) {
+  return (
+    <div>
+      <div>{props.question}</div>
+      <div>{props.options}</div>
+    </div>
+    );
+}
+
+class Window extends React.Component {
+  constructor(props) {
+    super(props);
+    this.body="https://ichef.bbci.co.uk/news/410/cpsprodpb/2D73/production/_105153611_suspect1.jpg";
+    this.question="Is the suspect a male or female?";
+    this.options=["Male", "Female"];
+  }
+  
+  render() {
+    return (
+      <div>
+        <div className="character">
+          <Character 
+            body={this.body} 
+          />
+          <h1>Hello</h1>
+        </div>
+        <div className="textbox">
+          <Question 
+            question={this.question}
+            options={this.options}
+          />
+        </div>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<Window />, document.getElementById('root'));
