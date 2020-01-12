@@ -59,6 +59,13 @@ class Window extends React.Component {
   async refresh(qId){
     let images = await drawCharacter();
     let data = await refresh(qId);
+    if (!data){
+      // When we get to the end, disable the question & options
+      data = {
+        Question: "",
+        Options: "[]"
+      }
+    }
 
     this.setState({
       question: data.Question,
