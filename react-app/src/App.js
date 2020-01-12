@@ -16,6 +16,12 @@ async function optionSelected(option, window){
   window.refresh(option.NextQuestionId);
 }
 
+function EndImage(){
+  return <div style={{position: 'relative', top: '50px', left: '1000px'}}>
+    <img style={{position: 'absolute'}} src="/images/endImage.png" alt="hello" />
+  </div>
+}
+
 function Character(props) {
   let images = [ ];
   for (let index = 0; index < props.images.length; index++)
@@ -50,7 +56,8 @@ class Window extends React.Component {
     this.state = {
       question: "Loading",
       options: "[]",
-      images: []
+      images: [],
+      isCompleted: false
     }
   }
   componentDidMount(){
@@ -59,21 +66,26 @@ class Window extends React.Component {
   async refresh(qId){
     let images = await drawCharacter();
     let data = await refresh(qId);
+    let isCompleted = false;
     if (!data){
       // When we get to the end, disable the question & options
       data = {
         Question: "",
         Options: "[]"
-      }
+      };
+
+      isCompleted = true;
     }
 
     this.setState({
       question: data.Question,
       options: data.Options,
-      images: images
+      images: images,
+      complete: isCompleted
     });
   }
   render() {
+    let endImage = this.state.complete ? <EndImage /> : <div />;
     return (
       <div>
         <div className="character">
@@ -86,6 +98,7 @@ class Window extends React.Component {
             window={this}
           />
         </div>
+        {endImage}
       </div>
     )
   }
